@@ -1,0 +1,33 @@
+
+
+#calendario {
+    max-width: 900px;
+    margin: auto;
+}
+/* Ajustes en la barra de búsqueda y el perfil del usuario */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .user-info {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .user-info img {
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #calendario {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
