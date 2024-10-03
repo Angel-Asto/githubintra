@@ -1,0 +1,203 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+}
+.sidebar.collapsed {
+    transform: translateX(-250px);
+}
+.sidebar h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+.sidebar ul li:hover {
+    background-color: #34495e;
+}
+.sidebar ul li i {
+    margin-right: 10px;
+}
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar .new-articles {
+    margin-top: 30px;
+    padding: 0 20px;
+}
+.sidebar .new-articles h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.sidebar .new-articles .article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.sidebar .new-articles .article img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.sidebar .new-articles .article .info {
+    font-size: 14px;
+}
+.sidebar .new-articles .article .info .date {
+    color: #bdc3c7;
+}
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+.main-content.collapsed {
+    margin-left: 0;
+}
+.main-content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ecf0f1;
+}
+.main-content .header .search-bar {
+    display: flex;
+    align-items: center;
+}
+.main-content .header .search-bar input {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #ecf0f1;
+    margin-right: 10px;
+}
+.main-content .header .search-bar i {
+    color: #7f8c8d;
+}
+.main-content .header .user-info {
+    display: flex;
+    align-items: center;
+}
+.main-content .header .user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+.main-content .content {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.main-content .content .section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+.main-content .content .section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+.main-content .content .section .chat-box {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+.main-content .content .section .chat-box .message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.main-content .content .section .chat-box .message img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.main-content .content .section .chat-box .message .text {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 20px;
+}
+.main-content .content .section .chat-input {
+    display: flex;
+    align-items: center;
+}
+.main-content .content .section .chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ecf0f1;
+    margin-right: 10px;
+}
+.main-content .content .section .chat-input i {
+    color: #7f8c8d;
+}
+.toggle-button {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-250px);
+    }
+    .sidebar.collapsed {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .main-content.collapsed {
+        margin-left: 250px;
+    }
+    .toggle-button {
+        display: block;
+    }
+    .main-content .header .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-content .header .user-info img {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
